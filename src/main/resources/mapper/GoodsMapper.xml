@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.wms_supermarket.mapper.GoodsMapper">
+    <select id="queryById">
+        select * from goods where id=#{gid}
+    </select>
+    <select id="queryByName">
+        select * from goods where name=#{name}
+    </select>
+    <select id="queryAll">
+        select * from goods
+    </select>
+    <insert id="insertGoods">
+        insert into goods (gid,name,description,location) values(#{gid},#{name},#{description},#{location})
+    </insert>
+    <delete id="deleteGoods">
+        delete from goods where gid=#{gid}
+    </delete>
+    <update id="updateGoodsLocation">
+        update goods set location=#{location} where gid=#{gid}
+    </update>
+</mapper>
